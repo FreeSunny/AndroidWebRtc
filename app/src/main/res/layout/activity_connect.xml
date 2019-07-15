@@ -2,12 +2,12 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_margin="16dp"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_centerHorizontal="true"
+    android:layout_margin="16dp"
     android:orientation="vertical"
-    android:weightSum="1"
-    android:layout_centerHorizontal="true">
+    android:weightSum="1">
 
     <TextView
         android:id="@+id/room_edittext_description"
@@ -16,36 +16,36 @@
         android:text="@string/room_description"/>
 
     <LinearLayout
-        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
         android:gravity="center"
-        android:layout_marginBottom="8dp">
+        android:orientation="horizontal">
 
         <!-- TODO(crbug.com/900912): Fix and remove lint ignore -->
         <EditText
-            tools:ignore="LabelFor,Autofill"
             android:id="@+id/room_edittext"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:maxLines="1"
             android:imeOptions="actionDone"
-            android:inputType="text"/>
+            android:inputType="text"
+            android:maxLines="1"
+            tools:ignore="LabelFor,Autofill"/>
 
         <ImageButton
             android:id="@+id/connect_button"
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:contentDescription="@string/connect_description"
-            android:background="@android:drawable/sym_action_call" />
+            android:background="@android:drawable/sym_action_call"
+            android:contentDescription="@string/connect_description"/>
 
         <ImageButton
             android:id="@+id/add_favorite_button"
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:contentDescription="@string/add_favorite_description"
-            android:background="@android:drawable/ic_input_add" />
+            android:background="@android:drawable/ic_input_add"
+            android:contentDescription="@string/add_favorite_description"/>
     </LinearLayout>
 
     <TextView
@@ -53,11 +53,11 @@
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_marginTop="8dp"
+        android:gravity="center_vertical"
         android:lines="1"
         android:maxLines="1"
-        android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/favorites"
-        android:gravity="center_vertical"/>
+        android:textAppearance="?android:attr/textAppearanceMedium"/>
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -68,13 +68,13 @@
             android:id="@+id/room_listview"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:drawSelectorOnTop="false" />
+            android:drawSelectorOnTop="false"/>
 
         <TextView
             android:id="@android:id/empty"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:text="@string/no_favorites" />
+            android:text="@string/no_favorites"/>
     </FrameLayout>
 </LinearLayout>
